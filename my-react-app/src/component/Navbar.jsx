@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 import './Navbar.css'
 import { CiSearch } from "react-icons/ci";
 import { FaUser } from "react-icons/fa";
@@ -7,7 +8,8 @@ import { FaCartArrowDown } from "react-icons/fa";
 import dave from '../assets/dave.png'
 import cart from '../assets/cart.png'
 import { Link } from 'react-router-dom'
-function Navbar({size}) {
+function Navbar() {
+  const { cartItemCount } = useCart();
   return (<>
     <div  className='registration'><FaUser /> Sign in</div>
     <div className='nav'>
@@ -22,8 +24,11 @@ function Navbar({size}) {
       <div  className='search-box'> <label htmlFor="text">
       <input type="text" placeholder='search' id='text' name='text'/>
         </label><CiSearch  className='search-icon'/></div>
-        <div><Link to='/Cart' className='cart' > <img src={cart}/></Link></div>
-          <span>{size}</span>
+        <div><Link to='/cart' className='cart' > <img src={cart}/> {cartItemCount > 0 && (
+          <span className="cart-badge">{cartItemCount}</span>
+        )}</Link>
+        </div>
+          
     </div>
     </>
   )

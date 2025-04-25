@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Route,Routes } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
 import  Navbar  from './component/Navbar'
 import { Home } from './component/pages/Home'
 import { Accessorie } from './component/pages/Accessorie';
@@ -11,8 +12,13 @@ import './App.css'
  function  App () {
  const [show, setShow]=useState(true);
  const [cart, setCart]=useState([]);
+ const halndleClike=(item)=>{
+ console.log(item)
+ }
   return (
     <>
+    
+      <CartProvider>
     <Navbar size={Cart.length} />
     <Routes>
       <Route path='/' element={<Home />} />
@@ -20,8 +26,10 @@ import './App.css'
       <Route path='/accessorie' element={<Accessorie />} />
       <Route path='/equipment' element={<Equipment />} />
       <Route path='/supplement' element={<Supplement />} />
-      <Route path='/cart' element={<Cart  />} />
+      <Route path='/cart' element={<Cart halndleClike={halndleClike} />} />
     </Routes>
+    </CartProvider>
+    
     </>
   )
 }
