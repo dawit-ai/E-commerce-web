@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 function Navbar() {
   const { cartItemCount } = useCart();
   return (<>
-    <div  className='registration'><FaUser /> Sign in</div>
+    <Link to='/login'  className='registration'><FaUser /> Sign in</Link>
     <div className='nav'>
       <img src={dave} alt="log pic"  className='logo'/>
       <ul>

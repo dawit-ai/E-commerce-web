@@ -8,7 +8,15 @@ import { Shop } from './component/pages/Shop'
 import { Supplement } from './component/pages/Supplement'
 import { Equipment } from './component/pages/Equipment'
 import { Cart } from './component/pages/Cart'
+import Login from './authen/login';
+import Signup from './authen/Signup';
+import AboutUs from './component/pages/About us';
 import './App.css'
+import FAQS from './component/pages/FAQS';
+import Privacy from './component/pages/Privacy';
+import Term from './component/pages/Term';
+import Returnfundpolicy from './component/pages/Returnfundpolicy';
+import ConatactUs from './component/pages/ConatactUs';
  function  App () {
  const [show, setShow]=useState(true);
  const [cart, setCart]=useState([]);
@@ -19,7 +27,7 @@ import './App.css'
     <>
     
       <CartProvider>
-    <Navbar size={Cart.length} />
+    <Navbar />
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/shop' element={<Shop />} />
@@ -27,7 +35,16 @@ import './App.css'
       <Route path='/equipment' element={<Equipment />} />
       <Route path='/supplement' element={<Supplement />} />
       <Route path='/cart' element={<Cart halndleClike={halndleClike} />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/signup' element={<Signup />} />
+      <Route path='/aboutUs' element={< AboutUs/>}/>
+      <Route path='/fAQS' element={< FAQS/>}/>
+      <Route path='/privacy' element={< Privacy/>}/>
+      <Route path='/term' element={< Term/>}/>
+      <Route path='/returnfundpolicy' element={< Returnfundpolicy/>}/>
+      <Route path='/conatactUs' element={< ConatactUs/>}/>
     </Routes>
+    
     </CartProvider>
     
     </>
