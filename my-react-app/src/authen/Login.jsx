@@ -1,20 +1,39 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Validation from './loginValidation' 
+import axios from 'axios'
 function Login(){
   const [values,setValues]=useState({
     email:'',
     password:''
   })
+const navigate=useNavigate();
   const [errors,setErrors]=useState({})
   const handleInput=(event)=>{
-    setValues(prev => ({ ...prev, [event.target.name]: event.target.value }))
+  setValues(prev => ({ ...prev, [event.target.name]: event.target.value }))
 
   }
-  const handleSubmit=(event)=>{
-  event.preventDefault();
-  setErrors(Validation(values))
-  }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const newErrors = Validation(values);
+    setErrors(newErrors);
+  
+    if (!newErrors.email  && !newErrors.password ) {
+      console.log('Submitting data:', values);
+      axios.post('http://localhost:5000/login', values)
+        .then(res => {
+          if(res.data ==='login successful'){
+            alert("login successfull")
+            navigate('/');
+          }
+          else{
+            alert("no data matched")
+          }
+         
+        })
+        .catch(err => console.log(err));
+    }
+  };
   return (
     <div className='login'>
       <form action="" onSubmit={handleSubmit}>

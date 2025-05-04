@@ -1,4 +1,100 @@
-.accessories{
-  max-width: 1200px;
-  margin: 0 auto;
+/* Main container */
+.accessories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f5f7fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Sort section */
+.sorts {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.sort-selector {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  transition: border 0.3s;
+}
+
+.sort-selector:hover,
+.sort-selector:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Product card */
+.accessories > div {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accessories > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Product image */
+.accessories img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+/* Product title */
+.title {
+  font-size: 1.25rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Product description */
+.description {
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+/* Add to Cart Button */
+.accessories button {
+  padding: 0.6rem 1.2rem;
+  background-color: #28a745;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.accessories button:hover {
+  background-color: #218838;
 }

@@ -11,7 +11,7 @@ function Signup() {
   const navigate=useNavigate();
   const [errors,setErrors]=useState({})
   const handleInput=(event)=>{
-  setValues(prev => ({ ...prev, [event.target.name]: event.target.values }))
+  setValues(prev => ({ ...prev, [event.target.name]: event.target.value }))
 
   }
   const handleSubmit = (event) => {
@@ -21,7 +21,7 @@ function Signup() {
   
     if (newErrors.name === '' && newErrors.email === '' && newErrors.password === '') {
       console.log('Submitting data:', values);
-      axios.post('http://localhost:3000/signup', values)
+      axios.post('http://localhost:5000/signup', values)
         .then(res => {
           navigate('/login');
         })
@@ -30,7 +30,7 @@ function Signup() {
   };
   return (
     <div className='signup'>
-      <form action="signup" onSubmit={handleSubmit}>
+      <form  onSubmit={handleSubmit}>
       <div className='name'>
           <label htmlFor="">Name</label>
           <input type="text" name="name"  onChange={handleInput} />

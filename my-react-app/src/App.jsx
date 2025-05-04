@@ -17,6 +17,7 @@ import Privacy from './component/pages/Privacy';
 import Term from './component/pages/Term';
 import Returnfundpolicy from './component/pages/Returnfundpolicy';
 import ConatactUs from './component/pages/ConatactUs';
+import { SearchResult } from './component/pages/SearchResult';
  function  App () {
  const [show, setShow]=useState(true);
  const [cart, setCart]=useState([]);
@@ -43,9 +44,11 @@ import ConatactUs from './component/pages/ConatactUs';
       <Route path='/term' element={< Term/>}/>
       <Route path='/returnfundpolicy' element={< Returnfundpolicy/>}/>
       <Route path='/conatactUs' element={< ConatactUs/>}/>
+      <Route path='/search' element={<SearchResult />} />
     </Routes>
     
     </CartProvider>
+   
     
     </>
   )

@@ -1,0 +1,33 @@
+.testimonial{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.profile{
+  text-align: center;
+}
+.profile img{
+ width: 100px;
+ height: 100px;
+ border-radius: 50%;
+ margin: 10px;
+}
+.profile p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  width: 410px;
+}
+.profile span{
+  color: #555;
+}
+.profile h4{
+  margin: 3px;
+  font-family: Georgia, 'Times New Roman', Times, serif, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+ .Testimonial-title {
+  text-align: center;
+  margin: 40px;
+  font-size: 2rem;
+}

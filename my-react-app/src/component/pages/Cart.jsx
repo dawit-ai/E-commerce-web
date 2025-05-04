@@ -3,7 +3,7 @@ import './cart.css'
 import { useCart } from '../../context/CartContext'
 import { getAccessorieImgUrl } from '../../Show/accessorie-img-show';
 import { getEquipmentImgUrl } from '../../Show/equipment';
-import { getSupplementImgUrl } from '../../Show/supplement'
+import { getSupplementImgUrl } from '../../Show/supplement';
 export const Cart = () => {
   const { cartItems, updateQuantity, removeFromCart } = useCart();
   let total=0;
